@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Irina. Freediving instructor, coach &amp; photographer. Dahab.</title>
 <meta name="description" content="Freediving instructor, coach and photographer in Dahab. AIDA courses, personal coaching and equalization help.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -36,29 +39,34 @@
     <p class="kicker">Work</p>
     <div class="cards">
 
-      <div class="card" role="button" tabindex="0" data-modal="modal-photography" aria-haspopup="dialog">
+      <article class="card card-click" role="button" tabindex="0" data-modal="modal-photography" aria-haspopup="dialog">
         <div class="card-image ph ph-1"><span class="ph-label">photo</span></div>
         <h2>Photography</h2>
-        <p>The sea, through my lens.</p>
-      </div>
+        <p class="card-tag">The sea, through my lens.</p>
+        <p class="card-more">View gallery</p>
+      </article>
 
-      <div class="card" role="button" tabindex="0" data-modal="modal-courses" aria-haspopup="dialog">
+      <article class="card">
         <div class="card-image ph ph-2"><span class="ph-label">photo</span></div>
         <h2>Courses</h2>
-        <p>Learn to freedive: AIDA 2 and AIDA 3, in Dahab.</p>
-      </div>
+        <p class="card-tag">Learn to freedive: AIDA 2 and AIDA 3, in Dahab.</p>
+        <p class="card-text">Small, personal courses where technique and calm get equal attention. From your first real breath-hold (AIDA 2) to deeper, more confident diving (AIDA 3). All levels welcome; the sea does not care about your numbers, and neither do I.</p>
+      </article>
 
-      <div class="card" role="button" tabindex="0" data-modal="modal-coaching" aria-haspopup="dialog">
+      <article class="card">
         <div class="card-image ph ph-3"><span class="ph-label">photo</span></div>
         <h2>Coaching</h2>
-        <p>Personal coaching, in Dahab or online.</p>
-      </div>
+        <p class="card-tag">Personal coaching, in Dahab or online.</p>
+        <p class="card-text">One-on-one coaching built around you: your breathing, your relaxation, your head. In the water in Dahab, or online if you are training elsewhere. We find what is actually holding you back, and it is almost never what you think it is.</p>
+      </article>
 
-      <div class="card" role="button" tabindex="0" data-modal="modal-eq" aria-haspopup="dialog">
+      <article class="card">
         <div class="card-image ph ph-4"><span class="ph-label">photo</span></div>
         <h2>EQ</h2>
-        <p>Equalization, solved. Book a free EQ call.</p>
-      </div>
+        <p class="card-tag">Equalization, solved.</p>
+        <p class="card-text">Equalization is the number one thing that stops freedivers, and the most fixable. As a SHARE EQ instructor I help you get from Valsalva to Frenzel, and from Frenzel to Mouthfill (evolved Frenzel), step by step. Start with a free call: we look at where you are and what would help.</p>
+        <a class="button" href="#">Book a free EQ call</a>
+      </article>
 
     </div>
   </section>
@@ -94,25 +102,6 @@
     <div class="ph g-8"><span class="ph-label">photo</span></div>
     <div class="ph g-9"><span class="ph-label">photo</span></div>
   </div>
-</dialog>
-
-<dialog id="modal-courses" class="modal" aria-labelledby="title-courses">
-  <button class="modal-close" aria-label="Close">&times;</button>
-  <h2 id="title-courses">Courses</h2>
-  <p>Small, personal courses where technique and calm get equal attention. From your first real breath-hold (AIDA 2) to deeper, more confident diving (AIDA 3). All levels welcome; the sea does not care about your numbers, and neither do I.</p>
-</dialog>
-
-<dialog id="modal-coaching" class="modal" aria-labelledby="title-coaching">
-  <button class="modal-close" aria-label="Close">&times;</button>
-  <h2 id="title-coaching">Coaching</h2>
-  <p>One-on-one coaching built around you: your breathing, your relaxation, your head. In the water in Dahab, or online if you are training elsewhere. We find what is actually holding you back, and it is almost never what you think it is.</p>
-</dialog>
-
-<dialog id="modal-eq" class="modal" aria-labelledby="title-eq">
-  <button class="modal-close" aria-label="Close">&times;</button>
-  <h2 id="title-eq">Equalization</h2>
-  <p>Equalization is the number one thing that stops freedivers, and the most fixable. As a SHARE EQ instructor I help you get from Valsalva to Frenzel, and from Frenzel to Mouthfill (evolved Frenzel), step by step. Start with a free call: we look at where you are and what would help.</p>
-  <a class="button" href="#">Book a free EQ call</a>
 </dialog>
 
 <script src="./script.js"></script>

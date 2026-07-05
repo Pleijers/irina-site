@@ -3,25 +3,28 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --ink: #23292c;
-  --muted: #7b878b;
-  --faint: #9aa6a9;
-  --bg: #fdfdfc;
-  --line: #e6e9e8;
-  --sea-1: linear-gradient(160deg, #bfd2d5 0%, #8aa8ae 55%, #6a8c94 100%);
-  --sea-2: linear-gradient(165deg, #cfdcdd 0%, #93b0b4 100%);
-  --sea-3: linear-gradient(150deg, #b7c9cb 0%, #7c9ba1 100%);
-  --sea-4: linear-gradient(170deg, #d7e0dc 0%, #a3bcb6 100%);
-  --sea-5: linear-gradient(155deg, #c2d3d6 0%, #86a6ad 100%);
+  --bg: #10181b;
+  --ink: #dde5e4;
+  --body: #aebcbd;
+  --muted: #8b9c9e;
+  --faint: #64777a;
+  --line: rgba(255, 255, 255, 0.09);
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sea-1: linear-gradient(160deg, #2a444d 0%, #1b3038 55%, #101f25 100%);
+  --sea-2: linear-gradient(165deg, #2d474c 0%, #17282d 100%);
+  --sea-3: linear-gradient(150deg, #274044 0%, #142327 100%);
+  --sea-4: linear-gradient(170deg, #31494a 0%, #1a2c2d 100%);
+  --sea-5: linear-gradient(155deg, #243c43 0%, #122127 100%);
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--sans);
   font-size: 17px;
   line-height: 1.6;
-  color: var(--ink);
+  color: var(--body);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -37,12 +40,18 @@ main, .hero-inner, footer {
 }
 
 .kicker {
+  font-family: var(--sans);
   font-size: 0.6875rem;
   font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--faint);
   margin-bottom: 2.25rem;
+}
+
+h1, h2 {
+  font-family: var(--serif);
+  color: var(--ink);
 }
 
 /* Placeholder image blocks */
@@ -54,12 +63,13 @@ main, .hero-inner, footer {
 }
 
 .ph-label {
+  font-family: var(--sans);
   font-size: 0.625rem;
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 999px;
   padding: 0.35em 1em 0.35em 1.3em;
   user-select: none;
@@ -71,17 +81,19 @@ main, .hero-inner, footer {
 .hero-inner .kicker { margin-bottom: 1.5rem; }
 
 .hero h1 {
-  font-size: clamp(3.25rem, 10vw, 5.75rem);
+  font-size: clamp(4rem, 12vw, 7rem);
   font-weight: 300;
-  letter-spacing: 0.015em;
-  line-height: 1.05;
+  letter-spacing: 0.03em;
+  line-height: 1;
 }
 
 .hero-line {
   margin-top: 1.25rem;
-  font-size: clamp(1rem, 2.5vw, 1.1875rem);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.1875rem, 3vw, 1.5rem);
+  font-weight: 300;
   color: var(--muted);
-  font-weight: 400;
 }
 
 .hero-image {
@@ -101,27 +113,29 @@ section { padding-top: 7.5rem; }
 .approach-text p {
   font-size: 1.0625rem;
   line-height: 1.85;
-  color: #3a4246;
 }
 
 .approach-text p + p { margin-top: 1.5em; }
+
+.approach-text p:first-child {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
 
 /* Work cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3rem 2rem;
-}
-
-.card {
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  gap: 4.5rem 3rem;
 }
 
 .card-image {
   aspect-ratio: 4 / 5;
-  margin-bottom: 1.25rem;
-  transition: opacity 0.35s ease;
+  margin-bottom: 1.5rem;
 }
 
 .ph-1 { background: var(--sea-3); }
@@ -130,33 +144,63 @@ section { padding-top: 7.5rem; }
 .ph-4 { background: var(--sea-2); }
 
 .card h2 {
-  font-size: 1.0625rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
-.card p {
-  margin-top: 0.35rem;
-  font-size: 0.9375rem;
+.card-tag {
+  margin-top: 0.4rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.125rem;
   color: var(--muted);
 }
 
-.card:hover .card-image,
-.card:focus-visible .card-image { opacity: 0.88; }
+.card-text {
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  max-width: 30rem;
+}
 
-.card:hover h2 { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.card-more {
+  margin-top: 1rem;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
 
-.card:focus-visible {
+/* Only the photography card is clickable */
+.card-click {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card-click .card-image { transition: opacity 0.35s ease; }
+
+.card-click:hover .card-image,
+.card-click:focus-visible .card-image { opacity: 0.82; }
+
+.card-click:hover .card-more { color: var(--ink); }
+
+.card-click:focus-visible {
   outline: 1px solid var(--faint);
   outline-offset: 6px;
 }
 
 /* Contact */
 .contact-line {
-  font-size: clamp(1.375rem, 4vw, 1.875rem);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: 300;
-  max-width: 26em;
-  line-height: 1.4;
+  color: var(--ink);
+  max-width: 22em;
+  line-height: 1.35;
 }
 
 .contact-links {
@@ -192,12 +236,12 @@ footer p {
   color: var(--faint);
 }
 
-/* Modals */
+/* Modal (photography gallery) */
 .modal {
-  border: none;
+  border: 1px solid var(--line);
   border-radius: 2px;
-  background: var(--bg);
-  color: var(--ink);
+  background: #162125;
+  color: var(--body);
   width: min(34rem, calc(100vw - 2.5rem));
   max-height: min(85vh, 85dvh);
   padding: 3rem 2rem 2.5rem;
@@ -207,18 +251,20 @@ footer p {
 
 .modal-wide { width: min(46rem, calc(100vw - 2.5rem)); }
 
-.modal::backdrop { background: rgba(35, 41, 44, 0.45); }
+.modal::backdrop { background: rgba(4, 8, 10, 0.65); }
 
 .modal h2 {
-  font-size: 1.375rem;
+  font-size: 1.75rem;
   font-weight: 400;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .modal p {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: #3a4246;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--muted);
 }
 
 .modal-close {
@@ -252,35 +298,36 @@ footer p {
   padding: 0.3em 0.8em 0.3em 1.1em;
 }
 
-.g-1 { background: linear-gradient(150deg, #c5d6d8, #8fadb1); }
-.g-2 { background: linear-gradient(165deg, #d7e0dc, #a3bcb6); }
-.g-3 { background: linear-gradient(155deg, #b7c9cb, #7c9ba1); }
-.g-4 { background: linear-gradient(170deg, #cfdcdd, #93b0b4); }
-.g-5 { background: linear-gradient(160deg, #bfd2d5, #6a8c94); }
-.g-6 { background: linear-gradient(145deg, #d2dedb, #9ab7b3); }
-.g-7 { background: linear-gradient(165deg, #c2d3d6, #86a6ad); }
-.g-8 { background: linear-gradient(150deg, #cdd9d6, #8aa8a2); }
-.g-9 { background: linear-gradient(170deg, #c8d7d9, #7f9ea5); }
+.g-1 { background: linear-gradient(150deg, #2b454b, #182b31); }
+.g-2 { background: linear-gradient(165deg, #31494a, #1b2e2f); }
+.g-3 { background: linear-gradient(155deg, #274044, #132226); }
+.g-4 { background: linear-gradient(170deg, #2d474c, #172a2f); }
+.g-5 { background: linear-gradient(160deg, #2a444d, #0f1e24); }
+.g-6 { background: linear-gradient(145deg, #2f4747, #1a2c2c); }
+.g-7 { background: linear-gradient(165deg, #243c43, #122127); }
+.g-8 { background: linear-gradient(150deg, #2c4643, #182b29); }
+.g-9 { background: linear-gradient(170deg, #28424a, #14252b); }
 
 .button {
   display: inline-block;
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
   padding: 0.85rem 1.75rem;
   background: var(--ink);
-  color: #fff;
+  color: var(--bg);
   text-decoration: none;
+  font-family: var(--sans);
   font-size: 0.9375rem;
   letter-spacing: 0.02em;
 }
 
-.button:hover { background: #3a4246; }
+.button:hover { background: #fff; }
 
 /* Mobile */
 @media (max-width: 640px) {
   .hero { padding-top: 4rem; }
   .hero-image { margin-top: 3rem; }
   section { padding-top: 5.5rem; }
-  .cards { grid-template-columns: 1fr; gap: 3rem; }
+  .cards { grid-template-columns: 1fr; gap: 4rem; }
   .card-image { aspect-ratio: 4 / 3; }
   .contact-links { flex-direction: column; }
   .modal { padding: 2.75rem 1.5rem 2rem; }
