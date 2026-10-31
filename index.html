@@ -7,28 +7,33 @@
 <meta name="description" content="Freediving instructor, coach and photographer in Dahab. AIDA courses, personal coaching and equalization help.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<header class="hero">
-  <div class="hero-inner">
-    <p class="kicker">Dahab, Egypt</p>
-    <h1>Irina</h1>
-    <p class="hero-line">Freediving instructor, coach &amp; photographer. Dahab.</p>
-  </div>
-  <div class="hero-image ph ph-hero" role="img" aria-label="Photo placeholder">
-    <span class="ph-label">photo</span>
-  </div>
+<header class="topbar">
+  <a class="wordmark" href="#top">Irina</a>
+  <nav aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <p class="kicker">Dahab, Egypt</p>
+    <h1>Freediving instructor, coach &amp; photographer</h1>
+    <a class="button" href="#approach">Dive in</a>
+  </div>
+</section>
+
+<div class="ocean">
 <main>
 
   <section class="approach" id="approach">
-    <p class="kicker">Approach</p>
+    <h2>I care more about how a dive feels than what the dive watch says.</h2>
     <div class="approach-text">
-      <p>I care more about how a dive feels than what the dive watch says.</p>
       <p>I started freediving in Lanzarote in 2020, and became an instructor in 2023. Somewhere along the way I noticed that the divers who chase numbers get stuck, and the ones who work on everything else just quietly get deeper. So that is what we work on: equalization, relaxation, self-confidence, trust. Depth is not the goal. Depth is what happens when the rest is taken care of.</p>
       <p>I am also a yoga practitioner, and it shows up in my teaching more often than I plan it to: the breath, the patience, the idea that you cannot force a body that does not feel safe.</p>
       <p>And when I am not underwater with a student, I am usually underwater with a camera. Photography is my way of playing: no goals, no numbers, just looking at the sea until it gives you something.</p>
@@ -36,34 +41,34 @@
   </section>
 
   <section class="work" id="work">
-    <p class="kicker">Work</p>
+    <h2>What I do</h2>
     <div class="cards">
 
       <article class="card">
-        <div class="card-image ph ph-1"><span class="ph-label">photo</span></div>
-        <h2>Equalization</h2>
+        <div class="card-image"><img src="img/eq.jpg" alt="Irina practising equalization with an Otovent balloon" style="object-position: center 35%"></div>
+        <h3>Equalization</h3>
         <p class="card-tag">Equalization, solved.</p>
         <p class="card-text">Equalization is the number one thing that stops freedivers, and the most fixable. As a SHARE EQ instructor I help you get from Valsalva to Frenzel, and from Frenzel to Mouthfill (evolved Frenzel), step by step. Start with a free call: we look at where you are and what would help.</p>
-        <a class="button" href="#">Book a free EQ call</a>
+        <a class="button button-small" href="#">Book a free EQ call</a>
       </article>
 
       <article class="card">
         <div class="card-image ph ph-2"><span class="ph-label">photo</span></div>
-        <h2>Courses</h2>
+        <h3>Courses</h3>
         <p class="card-tag">Learn to freedive: AIDA 2 and AIDA 3, in Dahab.</p>
         <p class="card-text">Small, personal courses where technique and calm get equal attention. From your first real breath-hold (AIDA 2) to deeper, more confident diving (AIDA 3). All levels welcome; the sea does not care about your numbers, and neither do I.</p>
       </article>
 
       <article class="card">
         <div class="card-image ph ph-3"><span class="ph-label">photo</span></div>
-        <h2>Coaching</h2>
+        <h3>Coaching</h3>
         <p class="card-tag">Personal coaching, in Dahab or online.</p>
         <p class="card-text">One-on-one coaching built around you: your breathing, your relaxation, your head. In the water in Dahab, or online if you are training elsewhere. We find what is actually holding you back, and it is almost never what you think it is.</p>
       </article>
 
       <article class="card card-click" role="button" tabindex="0" data-modal="modal-photography" aria-haspopup="dialog">
         <div class="card-image ph ph-4"><span class="ph-label">photo</span></div>
-        <h2>Photography</h2>
+        <h3>Photography</h3>
         <p class="card-tag">The sea, through my lens.</p>
         <p class="card-more">View gallery</p>
       </article>
@@ -72,20 +77,36 @@
   </section>
 
   <section class="contact" id="contact">
-    <p class="kicker">Contact</p>
-    <p class="contact-line">One conversation says more than a website.</p>
-    <ul class="contact-links">
-      <li><a href="#">Book a call</a></li>
-      <li><a href="#">Instagram</a></li>
-      <li><a href="#">Email</a></li>
-    </ul>
+    <h2>One conversation says more than a website.</h2>
+    <a class="button" href="#">Book a call</a>
   </section>
 
 </main>
 
 <footer>
-  <p>Irina &middot; Dahab, Egypt</p>
+  <div class="footer-cols">
+    <div>
+      <p class="footer-head">Work</p>
+      <ul>
+        <li><a href="#work">Equalization</a></li>
+        <li><a href="#work">Courses</a></li>
+        <li><a href="#work">Coaching</a></li>
+        <li><a href="#work">Photography</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-head">Contact</p>
+      <ul>
+        <li><a href="#">Book a call</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer-mark">Irina</p>
+  <p class="footer-small">Dahab, Egypt</p>
 </footer>
+</div>
 
 <dialog id="modal-photography" class="modal modal-wide" aria-labelledby="title-photography">
   <button class="modal-close" aria-label="Close">&times;</button>
