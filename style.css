@@ -1,4 +1,4 @@
-/* Irina - freediving instructor, coach & photographer */
+/* Irina - freediving instructor & coach */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -28,8 +28,6 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-
-body.modal-open { overflow: hidden; }
 
 a { color: inherit; }
 
@@ -120,68 +118,108 @@ main {
 
 section { padding: clamp(5rem, 12vw, 9rem) 0 0; }
 
-/* Approach */
-.approach h2 {
+/* Shared section headings */
+section > .kicker { margin-bottom: 1rem; }
+
+.about h2, .offer > h2, .contact h2 {
   font-size: clamp(1.75rem, 3.6vw, 2.75rem);
   max-width: 18em;
   margin-bottom: 2.5rem;
 }
 
-.approach-text { max-width: 36rem; }
-.approach-text p + p { margin-top: 1.25em; }
+.prose { max-width: 36rem; }
+.prose p + p { margin-top: 1.25em; }
 
-/* Work */
-.work > h2 {
-  font-size: clamp(1.75rem, 3.6vw, 2.75rem);
-  margin-bottom: 3rem;
-}
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-.cards {
+/* About: portrait next to the text */
+.about-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4rem 2.5rem;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
 }
 
-.card-image {
-  aspect-ratio: 4 / 3;
-  margin-bottom: 1.5rem;
+.about-image { aspect-ratio: 3 / 4; border-radius: 2px; overflow: hidden; }
+
+/* Film strip: three black-and-white frames */
+.film-strip {
+  display: grid;
+  grid-template-columns: 2fr 3fr 3fr;
+  gap: 0.5rem;
+  margin-top: clamp(5rem, 12vw, 9rem);
+}
+
+.film-strip img { aspect-ratio: 3 / 4; }
+.film-strip img + img { aspect-ratio: auto; }
+
+/* Courses & Coaching */
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem 3rem;
+  align-items: start;
+}
+
+.offer-image, .coach-image {
+  aspect-ratio: 4 / 5;
+  margin-bottom: 1.75rem;
   border-radius: 2px;
   overflow: hidden;
 }
 
-.card h3 { font-size: 1.5rem; margin-bottom: 0.4rem; }
+.offer-block h3 { font-size: 1.75rem; margin-bottom: 1.25rem; }
 
-.card-tag {
+.offer-block h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
   color: var(--ink);
-  font-weight: 500;
-  margin-bottom: 0.9rem;
+  margin: 2rem 0 0.6rem;
 }
 
-.card-text { color: var(--muted); margin-bottom: 1.5rem; }
+.offer-block p { color: var(--muted); }
+.offer-block p + p { margin-top: 1em; }
+.offer-block strong { color: var(--ink); font-weight: 500; }
+.offer-block .button { margin-top: 1.5rem; }
 
-.card-more {
+.levels {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.levels span {
+  display: inline-block;
   font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
+  letter-spacing: 0.14em;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.4em 1.1em;
 }
 
-.card-click { cursor: pointer; }
-.card-click .card-image { transition: opacity 0.35s ease; }
-.card-click:hover .card-image,
-.card-click:focus-visible .card-image { opacity: 0.8; }
-.card-click:hover .card-more { color: var(--ink); }
-.card-click:focus-visible { outline: 1px solid var(--ink); outline-offset: 8px; }
+.coach-item + .coach-item { margin-top: 4rem; }
+.coach-item > h4:first-child, .coach-image + h4 { margin-top: 0; }
 
-/* Contact */
-.contact { padding-bottom: clamp(5rem, 12vw, 9rem); }
-
-.contact h2 {
-  font-size: clamp(1.75rem, 3.6vw, 2.75rem);
-  max-width: 16em;
-  margin-bottom: 2.5rem;
+/* Contact: full-width band over the Dahab mountains */
+.contact {
+  margin-top: clamp(5rem, 12vw, 9rem);
+  padding: clamp(6rem, 16vw, 11rem) 0;
+  background:
+    linear-gradient(180deg, var(--deep) 0%, rgba(0, 10, 28, 0.55) 30%, rgba(0, 10, 28, 0.55) 70%, var(--deep) 100%),
+    url("img/dahab.jpg") center 60% / cover no-repeat;
 }
+
+.contact-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.contact-text { max-width: 30rem; margin: -1rem 0 2.5rem; }
+.contact-buttons { display: flex; flex-wrap: wrap; gap: 1rem; }
 
 /* Buttons: outlined, like a line on the water */
 .button {
@@ -247,85 +285,14 @@ footer {
   color: var(--muted);
 }
 
-/* Placeholder image blocks */
-.ph {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(165deg, #1f5f92, #072648);
-}
-
-.ph-label {
-  font-size: 0.625rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 999px;
-  padding: 0.35em 1em 0.35em 1.3em;
-  user-select: none;
-}
-
-.ph-1 { background: linear-gradient(160deg, #2a6d9e, #0b345c); }
-.card-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.ph-2 { background: linear-gradient(170deg, #1d5c8c, #082a4d); }
-.ph-3 { background: linear-gradient(150deg, #246594, #0a2f55); }
-.ph-4 { background: linear-gradient(165deg, #2f73a3, #0c3760); }
-
-/* Photography modal */
-.modal {
-  margin: auto;
-  border: none;
-  background: #041a36;
-  color: var(--body);
-  padding: 2.5rem;
-  max-height: calc(100vh - 2.5rem);
-  overflow-y: auto;
-}
-
-.modal-wide { width: min(52rem, calc(100vw - 2.5rem)); }
-.modal::backdrop { background: rgba(0, 6, 18, 0.75); }
-
-.modal h2 { font-size: 1.75rem; margin-bottom: 0.4rem; }
-.modal p { color: var(--muted); margin-bottom: 1.75rem; }
-
-.modal-close {
-  position: absolute;
-  top: 1rem; right: 1.25rem;
-  background: none;
-  border: none;
-  font-size: 1.75rem;
-  line-height: 1;
-  color: var(--muted);
-  cursor: pointer;
-}
-
-.modal-close:hover { color: var(--ink); }
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-}
-
-.gallery .ph { aspect-ratio: 1 / 1; }
-
-.g-1 { background: linear-gradient(150deg, #2a6d9e, #0b345c); }
-.g-2 { background: linear-gradient(165deg, #1d5c8c, #082a4d); }
-.g-3 { background: linear-gradient(155deg, #246594, #0a2f55); }
-.g-4 { background: linear-gradient(170deg, #2f73a3, #0c3760); }
-.g-5 { background: linear-gradient(160deg, #1f5f92, #072648); }
-.g-6 { background: linear-gradient(145deg, #2a6d9e, #0a2f55); }
-.g-7 { background: linear-gradient(165deg, #246594, #082a4d); }
-.g-8 { background: linear-gradient(150deg, #1d5c8c, #0b345c); }
-.g-9 { background: linear-gradient(170deg, #2f73a3, #072648); }
-
 @media (max-width: 720px) {
-  .cards { grid-template-columns: 1fr; gap: 3.5rem; }
+  .about-grid, .offer-grid { grid-template-columns: 1fr; }
+  .about-image { max-width: 24rem; }
+  .film-strip { grid-template-columns: 1fr 1fr; }
+  .film-strip img:first-child { display: none; }
+  .topbar nav { gap: 1rem; }
+  .topbar nav a { font-size: 0.8125rem; }
   .footer-cols { gap: 3rem; }
-  .gallery { grid-template-columns: repeat(2, 1fr); }
-  .modal { padding: 2rem 1.25rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
